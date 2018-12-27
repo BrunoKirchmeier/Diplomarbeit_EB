@@ -1,0 +1,165 @@
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Variablen
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+/** Sreen Dimensionen responsive */
+$breakpoint_small_min: 520px; // 320px
+$breakpoint_small_max: 600px; // 320px
+$breakpoint_middle_min: 768px; // 320px
+$breakpoint_middle_max: 1024px; // 320px
+$breakpoint_large_min: 1382px; // 320px
+
+/** Menü Aside Dimensionen seitlich */
+$aside_width_zugeklappt: 80px;
+$aside_width_aufgeklappt_tablet: 50%;
+$aside_width_aufgeklappt_pc: 30%;
+
+$aside_oben_height: 60px;
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Body
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+body {
+  font-family: "Ubuntu", sans-serif;
+  // font-size: 14px;
+  font-size: 0.875rem;
+  // line-height: 22px;
+  line-height: 1.375rem;
+  color: #828282;
+  font-weight: 400;
+  background: #fff;
+
+  width: 100%;
+  margin: auto;
+}
+
+
+label {
+  display: block;
+}
+
+input {
+  display: block;
+  max-width:100%;
+}
+
+select {
+  background: rgb(197, 224, 180);
+  padding: 5px;
+}
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Main für alle Seiten (ohne Aside)
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.main {
+
+  /** Alle grösser als Mobil Landscape
+   * Margin für Content, da Aside Seitlich nicht im Dokument Flow ist.
+   * Margin entspricht Aside breite im eingeklappten Zustand */
+  @media only screen and (min-width: $breakpoint_small_min) {
+    margin-right: $aside_width_zugeklappt;
+  }
+
+  /** Alle mit Aside oben:
+   * Margin für Content, da Aside oben nicht im Dokument Flow ist.
+   * Margin entspricht Aside oben */
+  @media only screen and (max-width: $breakpoint_small_min) {
+    margin-top: $aside_oben_height;
+  }
+
+}
+
+.mainAdmin {
+  margin-right: 30%;
+}
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Allgemeine Klassen für alle Module
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.text {
+
+  &__center{
+    text-align: center;
+  }
+
+}
+
+
+.button {
+
+  border: 0;
+
+  &-link {
+
+    margin-right: 30px;
+    margin-bottom: 20px;
+    padding: 5px 20px 5px 20px;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: rgb(84, 130, 53);
+    display: inline-block;
+
+    &:hover  {
+      color: white;
+      background: rgb(84, 130, 53);
+      text-decoration: none;
+      box-shadow: 0px 6px 0px rgb(197, 224, 180), 0px 3px 15px rgba(0,0,0,.4);
+    }
+  }
+}
+
+
+
+.form {
+
+  &-element {
+    background: rgb(197, 224, 180);
+    text-align: center;
+  }
+
+  &.okay {
+    color:green;
+  }
+
+  &.fehler {
+    color:red;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// Module laden
+//
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+@import "components/menue.scss";
+@import "components/auth.scss";
+@import "components/welcome.scss";
+@import "components/ticket.scss";

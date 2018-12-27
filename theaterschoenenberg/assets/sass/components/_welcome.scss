@@ -1,0 +1,37 @@
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//
+// HOME
+// https://getbootstrap.com/docs/3.3/components/#navbar
+// https://bootsnipp.com/snippets/featured/fancy-sidebar-navigation
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+.welcome {
+
+  &-container {
+  }
+
+  &-logo {
+    // Fallbacklösunge, weil Saari svg nicht auf Anhieb erkennt als .gif datei
+    background: url("../img/gif/Theater_Logo.gif");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+
+    width: 80%;
+    height: 100%; // Fallback Lösung wenn vh, vw, etc. von Browser nicht unterstütz wird
+    margin: auto;
+
+    /** Mobil Landscape */
+    /*
+    @media only screen and (orientation: portrait)  {
+      height: 100vh;
+    }
+*/
+    /** Mobil Landscape */
+    /*
+    @media only screen and (orientation: landscape)  {
+      height: 100vw;
+    }
+*/
+  }
+}

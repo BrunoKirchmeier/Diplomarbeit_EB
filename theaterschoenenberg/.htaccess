@@ -1,0 +1,27 @@
+# Disallow listings of Files
+Options -Indexes
+
+php_value memory_limit 512M
+php_value upload_max_filesize 200M
+php_value post_max_size 256M
+php_value max_file_uploads 1500
+php_value max_execution_time 300
+
+# Set ENVIRONMENT constant for CodeIgniter
+SetEnvIf Host localhost CI_ENV=development
+SetEnvIf Host pingu.eb-zuerich.ch CI_ENV=production
+
+RewriteEngine On
+
+# RewriteBase Development
+RewriteCond %{HTTP_HOST} !^localhost$
+RewriteRule . - [E=REWRITEBASE:/1_EB_Zuerich/Repository/Diplomarbeit/theaterschoenenberg/]
+
+# RewriteBase Production
+RewriteCond %{HTTP_HOST} ^pingu.eb-zuerich.ch$
+RewriteRule . - [E=REWRITEBASE:/kurs/webprog28/bk/theaterschoenenberg/]
+
+# Redirect for CodeIgniter to eliminate index.php from URL
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ %{ENV:REWRITEBASE}index.php/$1 [L]

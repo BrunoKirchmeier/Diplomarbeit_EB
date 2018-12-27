@@ -1,0 +1,18 @@
+{
+  "name": "Theaterverein",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "author": "Bruno Kirchmeier",
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "drawsvg": "^1.1.0",
+    "bootstrap": "^4.1.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "spectre.scss": "^0.0.3"
+  },
+  "dependencies": {}
+}
